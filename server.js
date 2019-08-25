@@ -20,6 +20,10 @@ app.post('/alipay/callback', (req, res) => {
   res.send('<h1>Callback</h1>');
 });
 
+app.get('/', (req, res) => {
+  res.send('hello, I\'m Pay');
+})
+
 const server = https.createServer(options, app);
 
 
