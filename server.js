@@ -16,12 +16,14 @@ const options = {
   cert: fs.readFileSync(path.join(__dirname, '/ssl/pay/1_pay.yingxitech.com_bundle.crt'))
 };
 
+app.post('/alipay/callback', (req, res) => {
+  res.send('<h1>Callback</h1>');
+});
+
 const server = https.createServer(options, app);
 
 
-server.post('/alipay/callback', (req, res) => {
-  res.send('<h1>Callback</h1>');
-})
+
 
 
 server.listen(PORT, (e) => {
